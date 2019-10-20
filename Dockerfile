@@ -6,6 +6,11 @@ ENV APPLICATION_ENV development
 WORKDIR $APP_DIR
 VOLUME $APP_DIR
 
+RUN apt-get update && apt-get install -y \
+        build-essential \
+        nodejs \
+        npm
+
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');    \
     \$sig = file_get_contents('https://composer.github.io/installer.sig');      \
     if (trim(\$sig) === hash_file('SHA384', 'composer-setup.php')) exit(0);     \
