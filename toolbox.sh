@@ -36,6 +36,10 @@ function command_boot()
     echo ""
 }
 
+function command_tests(){
+    echo "composer test" |  docker exec -i  tmpr_tmpr_1 /bin/bash
+}
+
 function command_rebuild() {
     echo "Building image tmpr"
     docker build --no-cache -t tmpr .

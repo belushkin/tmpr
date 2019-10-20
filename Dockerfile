@@ -7,6 +7,7 @@ WORKDIR $APP_DIR
 VOLUME $APP_DIR
 
 RUN apt-get update && apt-get install -y \
+        git \
         build-essential \
         nodejs \
         npm
