@@ -13,9 +13,25 @@ Create chart according to the provided requirements in the separate document
 - PhpUnit 8
 - Bash
 
+### Prerequisites
+Docker.io and docker-compose must be installed in the system.
+OS Linux
+
+## Setup the application:
+```bash
+git clone https://github.com/belushkin/tmpr.git
+cd tmpr; ./toolbox.sh up
+```
+
 ## Basic script usage:
+In order to operate application toolbox.sh script has been created. It is very easy run, stop, ssh, rebuild, run tests and stop the application.
+
 ```bash
 ./toolbox.sh up # run the application
+./toolbox.sh rebuild # rebuild the image
+./toolbox.sh ssh # ssh to the image
+./toolbox.sh tests # run tests
+./toolbox.sh down # stop the application
 ```
 
 
