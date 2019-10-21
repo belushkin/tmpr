@@ -4,4 +4,5 @@ namespace App\Transformer;
 
 interface ITransformer
 {
+    public static function fromArray(array $data): string;
 }
