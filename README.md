@@ -40,8 +40,8 @@ Application has *toolbox.sh* script. It is very easy run, stop, ssh, rebuild, ru
 ### URL of the running app
 http://localhost:8080/
 
-##Contributors
+## Contributors
 @belushkin
 
-##License
+## License
 MIT License
