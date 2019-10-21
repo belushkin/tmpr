@@ -13,6 +13,11 @@ Create chart according to the provided requirements in the separate document
 - PhpUnit 8
 - Bash
 
+## Basic script usage:
+```bash
+./toolbox.sh up # run the application
+```
+
 
 docker-compose up
 http://localhost:8080/
