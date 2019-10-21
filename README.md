@@ -1,10 +1,10 @@
-# Tmpr (Objective)
+# Tmpr PHP assesment
 This assessment aims to gauge your development skills with the focus being on back-end using PHP. We will be paying attention to your approach to solving the problem, the structure of your code, and adherence to best practices and design principles.
 
 ![alt text](./public/assets/img/tmpr.png)
 
-### Requirements:
-Create chart according to the provided requirements in the separate document
+### Requirements of the assesment:
+Create chart according to the provided requirements in the separate document.
 
 ### Technologies
 - Plain PHP
@@ -14,12 +14,13 @@ Create chart according to the provided requirements in the separate document
 - HighChart (JavaScript library)
 - PhpUnit 8
 - Bash
+- Git
 
 ### Prerequisites
-Docker.io and docker-compose must be installed in the system.
+Docker.io and docker-compose must be installed in the system in order to be able to use the app.
 OS Linux
 
-## Setup the application:
+## How to setup the application:
 ```bash
 git clone https://github.com/belushkin/tmpr.git
 cd tmpr; ./toolbox.sh up
@@ -39,3 +40,8 @@ Application has *toolbox.sh* script. It is very easy run, stop, ssh, rebuild, ru
 ### URL of the running app
 http://localhost:8080/
 
+##Contributors
+@belushkin
+
+##License
+MIT License
