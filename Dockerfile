@@ -9,8 +9,12 @@ VOLUME $APP_DIR
 RUN apt-get update && apt-get install -y \
         git \
         build-essential \
-        nodejs \
-        npm
+        curl \
+        gnupg
+
+RUN curl -sL https://deb.nodesource.com/setup_11.x  | bash -
+RUN apt-get install -y \
+        nodejs
 
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');    \
     \$sig = file_get_contents('https://composer.github.io/installer.sig');      \
@@ -23,4 +27,4 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');    
 
 EXPOSE 8080
 
-CMD ["php", "-S", "0.0.0.0:8080", "-t", "/app/public", "/app/public/index.php"]
+CMD ["php", "-S", "0.0.0.0:8080", "-t", "/app/public"]

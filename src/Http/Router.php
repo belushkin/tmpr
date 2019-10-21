@@ -56,7 +56,7 @@ class Router
     {
         $methodDictionary    = $this->{strtolower($this->request->requestMethod)};
         $formattedRoute      = $this->formatRoute($this->request->requestUri);
-        $method              = $methodDictionary[$formattedRoute];
+        $method              = @$methodDictionary[$formattedRoute];
 
         if(is_null($method)) {
             $this->defaultRequestHandler();
