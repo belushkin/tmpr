@@ -1,1 +1,3 @@
-Hello world
+<?
+echo "<pre>";
+//print_r($json);
