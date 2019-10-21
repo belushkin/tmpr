@@ -1,20 +1,12 @@
 FROM php
 
 ENV APP_DIR /app
-ENV APPLICATION_ENV development
 
 WORKDIR $APP_DIR
 VOLUME $APP_DIR
 
 RUN apt-get update && apt-get install -y \
-        git \
-        build-essential \
-        curl \
-        gnupg
-
-RUN curl -sL https://deb.nodesource.com/setup_11.x  | bash -
-RUN apt-get install -y \
-        nodejs
+        git
 
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');    \
     \$sig = file_get_contents('https://composer.github.io/installer.sig');      \
