@@ -1,28 +1,64 @@
-var ctx = document.getElementById('myChart');
+console.log(d);
+Highcharts.chart('container', {
 
-var myChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-        datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
-            borderWidth: 1
+    title: {
+        text: 'How users are performing in the Onboarding Flow'
+    },
+
+    subtitle: {
+        text: 'Source: Tmpr'
+    },
+
+    yAxis: {
+        title: {
+            text: 'Percentage of Users'
         },
-        {
-            label: '# of Votes',
-            data: [1, 1, 3, 5, 2, 3],
-            borderWidth: 1
-        }
+        type: 'linear'
+    },
+    xAxis: {
+        title: {
+            text: 'Percentage of Users'
+        },
+        categories:[
+            'Create account - 0%',
+            'Activate account - 20%',
+            'Provide profile information - 40%',
+            'What jobs are you interested in? - 50%',
+            'Do you have relevant experience in these jobs? - 70%',
+            'Are you a freelancer? - 90%',
+            'Waiting for approval - 99%',
+            'Approval - 100%'
         ]
     },
-    options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero: true
-                }
-            }]
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle'
+    },
+
+    plotOptions: {
+        series: {
+            label: {
+                connectorAllowed: false
+            }
         }
+    },
+
+    series: d,
+
+    responsive: {
+        rules: [{
+            condition: {
+                maxWidth: 500
+            },
+            chartOptions: {
+                legend: {
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom'
+                }
+            }
+        }]
     }
+
 });
