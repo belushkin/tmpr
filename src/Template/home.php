@@ -11,15 +11,6 @@
     <script src="https://code.highcharts.com/modules/export-data.js"></script>
 </head>
 <body>
-    <script>
-        let d = '<?php echo $json;?>';
-    </script>
-    <?php
-//        echo "<pre>";
-//        print_r($data);
-//        print_r();
-
-    ?>
     <div id="container"></div>
     <script src="/assets/js/tmpr.js"></script>
 </body>

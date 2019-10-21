@@ -1,64 +1,60 @@
-console.log(d);
-Highcharts.chart('container', {
-
-    title: {
-        text: 'How users are performing in the Onboarding Flow'
-    },
-
-    subtitle: {
-        text: 'Source: Tmpr'
-    },
-
-    yAxis: {
+document.addEventListener('DOMContentLoaded', function () {
+    let options = {
         title: {
-            text: 'Percentage of Users'
+            text: 'How users are performing in the Onboarding Flow'
         },
-        type: 'linear'
-    },
-    xAxis: {
-        title: {
-            text: 'Percentage of Users'
+
+        subtitle: {
+            text: 'Source: Tmpr'
         },
-        categories:[
-            'Create account - 0%',
-            'Activate account - 20%',
-            'Provide profile information - 40%',
-            'What jobs are you interested in? - 50%',
-            'Do you have relevant experience in these jobs? - 70%',
-            'Are you a freelancer? - 90%',
-            'Waiting for approval - 99%',
-            'Approval - 100%'
-        ]
-    },
-    legend: {
-        layout: 'vertical',
-        align: 'right',
-        verticalAlign: 'middle'
-    },
 
-    plotOptions: {
-        series: {
-            label: {
-                connectorAllowed: false
-            }
-        }
-    },
+        chart: {
+            type: 'spline',
+            pointStart: 0
+        },
 
-    series: d,
-
-    responsive: {
-        rules: [{
-            condition: {
-                maxWidth: 500
+        yAxis: {
+            title: {
+                text: 'Percentage of Users'
             },
-            chartOptions: {
-                legend: {
-                    layout: 'horizontal',
-                    align: 'center',
-                    verticalAlign: 'bottom'
-                }
+            type: 'linear',
+            offset:0
+        },
+
+        xAxis: {
+            title: {
+                text: 'Percentage of Users'
+            },
+            categories:[
+                'Create account - 0%',
+                'Activate account - 20%',
+                'Provide profile information - 40%',
+                'What jobs are you interested in? - 50%',
+                'Do you have relevant experience in these jobs? - 70%',
+                'Are you a freelancer? - 90%',
+                'Waiting for approval - 99%',
+                'Approval - 100%'
+            ]
+        },
+
+        plotOptions: {
+            series: {
+                label: {
+                    connectorAllowed: false
+                },
+                pointPlacement: 'on'
             }
-        }]
-    }
+        },
+
+        series: [{}]
+    };
+
+    Highcharts.ajax({
+        url: '/api/v1/data',
+        success: function(data) {
+            options.series = data;
+            Highcharts.chart('container', options);
+        }
+    });
 
 });

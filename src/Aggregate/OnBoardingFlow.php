@@ -9,6 +9,7 @@ class OnBoardingFlow implements IAggregate
 {
 
     private $data;
+    private $steps = [0,20,40,50,70,90,99,100];
 
     public function __construct($data)
     {
@@ -18,14 +19,12 @@ class OnBoardingFlow implements IAggregate
     public function aggregate(): array
     {
         $data = $this->divideByWeek($this->data);
-        $data = $this->mean($data);
+        $data = $this->findStepsPercentage($data);
 
         $result = [];
         for ($i = 0; $i < count($data); $i++) {
-//            $result[$i]['name'] = ($i+1) ." weeks later";
-            for ($j = 0; $j < count($data); $j++) {
-                $result[$i][] = ($j<=$i) ? round($data[$j], 2) : null;
-            }
+            $result[$i]['name'] = ($i+1) ." weeks later";
+            $result[$i]['data'] = $data[$i];
         }
         return $result;
     }
@@ -42,16 +41,26 @@ class OnBoardingFlow implements IAggregate
                 $nextWeekDay->modify('+7 day');
                 $weekNumber++;
             }
-            $result[$weekNumber][] = $percentage;
+            if (in_array($percentage, $this->steps)) {
+                $result[$weekNumber][] = $percentage;
+            }
         }
         return $result;
     }
 
-    private function mean(array $data): array
+    private function findStepsPercentage(array $data): array
     {
         $result = [];
         foreach ($data as $key => $value) {
-            $result[] = array_sum($data[$key])/count($data[$key]);
+            $values = array_count_values($value);
+            foreach ($this->steps as $step) {
+                if (isset($values[$step])) {
+                    $result[$key][] = round(($values[$step]*100)/count($value));
+                } else {
+                    $result[$key][] = 0;
+                }
+            }
+            $result[$key][0] = 100;
         }
         return $result;
     }
