@@ -24,7 +24,7 @@ cd tmpr; ./toolbox.sh up
 ```
 
 ## Basic script usage:
-In order to operate application toolbox.sh script has been created. It is very easy run, stop, ssh, rebuild, run tests and stop the application.
+Application has *toolbox.sh* script. It is very easy run, stop, ssh, rebuild, run tests and stop the application.
 
 ```bash
 ./toolbox.sh up # run the application
