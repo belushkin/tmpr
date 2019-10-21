@@ -25,6 +25,8 @@ OS Linux
 git clone https://github.com/belushkin/tmpr.git
 cd tmpr; ./toolbox.sh up
 ```
+### URL of the running app
+http://localhost:8080/
 
 ## Basic script usage:
 Application has *toolbox.sh* script. It is very easy run, stop, ssh, rebuild, run tests and stop the application.
@@ -36,9 +38,6 @@ Application has *toolbox.sh* script. It is very easy run, stop, ssh, rebuild, ru
 ./toolbox.sh tests # run tests
 ./toolbox.sh down # stop the application
 ```
-
-### URL of the running app
-http://localhost:8080/
 
 ## Contributors
 @belushkin
