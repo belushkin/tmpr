@@ -1,6 +1,8 @@
 # Tmpr (Objective)
 This assessment aims to gauge your development skills with the focus being on back-end using PHP. We will be paying attention to your approach to solving the problem, the structure of your code, and adherence to best practices and design principles.
 
+![alt text](./public/assets/img/tmpr.png)
+
 ### Requirements:
 Create chart according to the provided requirements in the separate document
 
