@@ -29,13 +29,11 @@ Application has *toolbox.sh* script. It is very easy run, stop, ssh, rebuild, ru
 ```bash
 ./toolbox.sh up # run the application
 ./toolbox.sh rebuild # rebuild the image
-./toolbox.sh ssh # ssh to the image
+./toolbox.sh ssh # ssh to the container
 ./toolbox.sh tests # run tests
 ./toolbox.sh down # stop the application
 ```
 
-
-docker-compose up
+### URL of the running app
 http://localhost:8080/
 
-/app/node_modules/.bin/webpack-dev-server --config vue/build/webpack.config.js
